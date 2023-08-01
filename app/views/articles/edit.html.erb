@@ -1,35 +1,10 @@
 <h1>Edit Article</h1>
 
-<% if @article.errors.any? %>
-    <h3>The following error prevented article save:</h3>
-    <ul>
-        <% @article.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-        <% end %>
-    </ul>
-<% end %>
+<%= render "form_show_new" %>
 
-<%= form_with(model: @article, local: true) do |thing| %>
-    <!--or will work if in articles-controller use only render "new" --!>
-    <!-- form_with scope: :article, url: articles_path, data: { turbo: false }, local: true do |f| --!>
-
-    <p>
-        <%= thing.label :title %></br>
-        <%= thing.text_field :title %>
-    </p>
-    <p>
-        <%= thing.label :description %></br>
-        <%= thing.text_area :description %>
-    </p>
-    <p>
-        <%= thing.submit %>
-    </p>
-
-  <% end %>
-
-  <p>
-  <%= link_to "Create", new_article_path %> | 
-  <%= link_to "Articles", articles_path %> |
-  <%= link_to "About", about_path %> |
-  <%= link_to "Home", root_path %>
-  </p>
+<p>
+<%= link_to "Create", new_article_path %> | 
+<%= link_to "Articles", articles_path %> |
+<%= link_to "About", about_path %> |
+<%= link_to "Home", root_path %>
+</p>

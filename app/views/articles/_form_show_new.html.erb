@@ -1,0 +1,26 @@
+<% if @article.errors.any? %>
+    <h3>The following error prevented article save:</h3>
+    <ul>
+        <% @article.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+    </ul>
+<% end %>
+
+<%= form_with(model: @article, local: true) do |thing| %>
+    <!--or will work if in articles-controller use only render "new" --!>
+    <!-- form_with scope: :article, url: articles_path, data: { turbo: false }, local: true do |f| --!>
+
+    <p>
+        <%= thing.label :title %></br>
+        <%= thing.text_field :title %>
+    </p>
+    <p>
+        <%= thing.label :description %></br>
+        <%= thing.text_area :description %>
+    </p>
+    <p>
+        <%= thing.submit %>
+    </p>
+
+  <% end %>
