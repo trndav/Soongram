@@ -1,4 +1,4 @@
-<h1>Create a New Article</h1>
+<h1>Edit Article</h1>
 
 <% if @article.errors.any? %>
     <h3>The following error prevented article save:</h3>
@@ -9,7 +9,7 @@
     </ul>
 <% end %>
 
-<%= form_with scope: :article, url: articles_path, local: true do |thing| %>
+<%= form_with(model: @article, local: true) do |thing| %>
     <!--or will work if in articles-controller use only render "new" --!>
     <!-- form_with scope: :article, url: articles_path, data: { turbo: false }, local: true do |f| --!>
 
@@ -31,4 +31,3 @@
 <a href="http://localhost:3000/articles/" >Article</a>
 <a href="http://localhost:3000/" >Home</a>
 <a href="http://localhost:3000/articles/new" >New</a>
-  
