@@ -1,6 +1,8 @@
 <h1>Soongram</h1>
 
-<a href="http://localhost:3000/about/" >About</a>
-<a href="http://localhost:3000/articles/" >Article</a>
-<a href="http://localhost:3000/" >Home</a>
-<a href="http://localhost:3000/articles/new" >New</a>
+<p>
+<%= link_to "Create", new_article_path %> |
+<%= link_to "Articles", articles_path %> |
+<%= link_to "About", about_path %> |
+<%= link_to "Home", root_path %>
+</p>
