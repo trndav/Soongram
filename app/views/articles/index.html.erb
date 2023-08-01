@@ -1,0 +1,25 @@
+<h1>All Articles</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        <% @articles.each do |article| %>
+            <tr>
+                <td><%= article.title %></td>
+                <td><%= article.description %></td>
+                <td>Placehold</td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<a href="http://localhost:3000/about" >About</a>
+<a href="http://localhost:3000/articles" >Article</a>
+<a href="http://localhost:3000/" >Home</a>
