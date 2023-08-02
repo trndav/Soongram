@@ -1,8 +1,24 @@
-<h1>Soongram</h1>
+<div class="container" id="home-jumbo-container">
+    <div class="p-3 mb-2 bg-dark-subtle text-primary-emphasis text-center">
+        <h1 class="display-4">Soongram</h1>
+        <p class="lead">What is Soongram about? Its about testing codes, sandbox mode for Rails developers. Dont tell anyone.</p>
+        <hr class="my-4">
+        <p>This is Rails on Udemy course like no other.</p>
+        <p class="lead">
+            <a class="btn btn-success btn-lg" href="#" role="button">Clickbait!</a>
+        </p>
+    </div>
+</div>
 
+<div class="container" id="navigation-links">
 <p>
 <%= link_to "Create", new_article_path %> |
 <%= link_to "Articles", articles_path %> |
 <%= link_to "About", about_path %> |
 <%= link_to "Home", root_path %>
 </p>
+</div>
+
+<footer class="footer mt-auto py-3 bg-dark">
+    © 2023 Copyleft by Railers on Udemy
+</footer>

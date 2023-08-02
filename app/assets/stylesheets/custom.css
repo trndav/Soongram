@@ -1,8 +1,40 @@
 .navbar {
-    background-color: #02ff81 !important;
+    background-color: black !important;
   }
 
-  .center-container {
-    display: flex;
-    justify-content: center;
-  }
+#navbar-logo {
+  float: left;
+  font-size: 1.5em;
+  color: rgb(4, 252, 136);
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+.nav-link {
+  color:rgb(4, 252, 136) !important;
+}
+
+#home-jumbo-container {
+  margin-top: 25px;
+}
+
+div.p-3 {
+  background-image: url("unsplash.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 280px;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+
+#navigation-links {
+  text-align: center;
+}
