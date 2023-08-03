@@ -1,8 +1,16 @@
-<h1>About page</h1>
+<h1 class="text-center">About page</h1>
 
-<p>
-<%= link_to "Create", new_article_path %> |
-<%= link_to "Articles", articles_path %> |
-<%= link_to "About", about_path %> |
-<%= link_to "Home", root_path %>
+<div class="text-center">
+    <%= image_tag "happy-dog.jpg", alt: "Logo" %>
+</div>
+
+<p class="text-center">
+    Im a ha-ppy, happy dog, Im a happy happy happy happy happy dog!
+</p>
+
+<p class="text-center">
+    <%= link_to "Create", new_article_path %> |
+    <%= link_to "Articles", articles_path %> |
+    <%= link_to "About", about_path %> |
+    <%= link_to "Home", root_path %>
 </p>

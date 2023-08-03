@@ -1,30 +1,29 @@
-<h1>All Articles</h1>
+<h1 class="text-center", id="article-h1">All Articles</h1>
 
-<table>
-    <thead>
-        <tr>
-            <th>Title</th>
-            <th>Description</th>
-            <th colspan="3">Actions</th>
-        </tr>
-    </thead>
-    
-    <tbody>
-        <% @articles.each do |article3| %>
-            <tr>
-                <td><%= article3.title %></td>
-                <td><%= article3.description %></td>
-                <td><%= link_to "View", article_path(article3) %></td>
-                <td><%= link_to "Edit", edit_article_path(article3) %></td>
-                <td><%= link_to "Delete", article_path(article3), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></td>
-            </tr>
-        <% end %>
-    </tbody>
-</table>
+<div class="container" id:"articles-margin">
+    <% @articles.each do |article3| %>
+        <div class="row justify-content-md-center">
+            <div class="col-8  mt-4">
+                <div class="card text-center shadow mb-2 bg-white rounded">
+                    <div class="card-header" id="card-author">
+                        made by Udemy Railer
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title"><%= link_to article3.title, article_path(article3), class: "text-success" %></h5>
+                        <p class="card-text"><%= truncate(article3.description, length: 120) %></p> 
 
-<p>
-<%= link_to "Create", new_article_path %> |
-<%= link_to "Articles", articles_path %> |
-<%= link_to "About", about_path %> |
-<%= link_to "Home", root_path %>
-</p>
+                        <%= link_to "View", article_path(article3), class: "btn btn-success" %>
+                        <%= link_to "Edit", edit_article_path(article3), class: "btn btn-warning" %>
+                        <%= link_to "Delete", article_path(article3), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger"  %>
+
+                    </div>      
+                    <div class="card-footer text-muted">
+                        <small>Created <%= time_ago_in_words(article3.created_at) %> ago, 
+                        updated <%= time_ago_in_words(article3.updated_at) %> ago.
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <% end %>
+</div>
