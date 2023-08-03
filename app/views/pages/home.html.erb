@@ -3,9 +3,10 @@
             <h1 class="display-4">Soongram</h1>
             <p class="lead">What is Soongram about? Its about testing codes, sandbox mode for Rails developers. Dont tell anyone.</p>
             <hr class="my-4">
-            <p>This is Rails on Udemy course like no other.</p>
+            <p>This is Rails on Udemy course like no other.</br>
+            Primary functionality is Articles page where we can view, add, edit or detete posts.</p>
             <p class="lead">
-                <a class="btn btn-success btn-lg" href="#" role="button">Clickbait!</a>
+                <%= link_to "Check Articles!", articles_path, class: "btn btn-success" %>
             </p>
         </div>
     </div>
@@ -15,7 +16,6 @@
             <%= link_to "Create", new_article_path %> |
             <%= link_to "Articles", articles_path %> |
             <%= link_to "About", about_path %> |
-            <%= link_to "Home", root_path %>
         </p>
 </div>
     </div>

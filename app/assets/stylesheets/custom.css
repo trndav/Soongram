@@ -54,3 +54,15 @@ body {
 #articles-margin {
   margin-bottom: 50px;
 }
+
+.container-new-post {
+  margin-top: 10px;
+}
+
+#main-form {
+  margin-top: 10px;
+}
+
+#form-button {
+  margin-top: 10px;
+}
