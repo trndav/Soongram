@@ -1,16 +1,16 @@
-<h1 class="text-center", id="article-h1">All Articles</h1>
+<h1 class="text-success", id="article-h1">All Articles</h1>
 
 <div class="container" id:"articles-margin">
     <% @articles.each do |article3| %>
         <div class="row justify-content-md-center">
-            <div class="col-8  mt-4">
+            <div class="col-8  mt-3">
                 <div class="card text-center shadow mb-2 bg-white rounded">
-                    <div class="card-header" id="card-author">
-                        made by Udemy Railer
+                    <div class="card-header", id="card-author">
+                        <small>made by Udemy Railer</small>
                     </div>
                     <div class="card-body">
                         <h5 class="card-title"><%= link_to article3.title, article_path(article3), class: "text-success" %></h5>
-                        <p class="card-text"><%= truncate(article3.description, length: 120) %></p> 
+                        <div class="card-text" style="text-align: left;"><%= simple_format(truncate(article3.description, length: 130)) %></div> 
 
                         <%= link_to "View", article_path(article3), class: "btn btn-success" %>
                         <%= link_to "Edit", edit_article_path(article3), class: "btn btn-warning" %>

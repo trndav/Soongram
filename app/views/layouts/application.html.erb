@@ -22,14 +22,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
 
     <%= render "layouts/navbar" %>
-
     <%= render "layouts/flashmsg_app_cont" %>
     <%= yield %>
-    <footer class="footer mt-auto py-3 bg-dark">
-    <div class="container">
-        © 2023 Copyleft by <%= link_to "Railers on Udemy", about_path, class: "text-white" %>
-    </div>
-  </footer>
-
+    <%= render "layouts/footer" %>
     </body>
 </html>
