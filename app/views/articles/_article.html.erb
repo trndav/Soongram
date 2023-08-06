@@ -1,0 +1,27 @@
+<div class="container" id:"articles-margin">
+    <% @articles.each do |article3| %>
+        <div class="row justify-content-md-center">
+            <div class="col-8  mt-3">
+                <div class="card text-center shadow mb-2 bg-white rounded">
+                    <div class="card-header", id="card-author">
+                        <small>made by <%= article3.user.username if article3.user %></small>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title"><%= link_to article3.title, article_path(article3), class: "text-success" %></h5>
+                        <div class="card-text" style="text-align: left;"><%= simple_format(truncate(article3.description, length: 130)) %></div> 
+
+                        <%= link_to "View", article_path(article3), class: "btn btn-success" %>
+                        <%= link_to "Edit", edit_article_path(article3), class: "btn btn-warning" %>
+                        <%= link_to "Delete", article_path(article3), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger"  %>
+
+                    </div>      
+                    <div class="card-footer text-muted">
+                        <small>Created <%= time_ago_in_words(article3.created_at) %> ago, 
+                        updated <%= time_ago_in_words(article3.updated_at) %> ago.
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <% end %>
+</div>
