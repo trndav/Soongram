@@ -4,7 +4,8 @@
         <div class="col-8  mt-4">
             <div class="card text-center shadow mb-2 bg-white rounded">
                 <div class="card-header" id="card-author">
-                    <small>made by <%= @article.user.username if @article.user %></small>
+                    <small>made by <%= link_to @article.user.username, user_path(@article.user) if @article.user %></small>
+                    <%= link_to gravatar_for(@article.user), user_path(@article.user) %>
                 </div>
                 <div class="card-body">
                     <div class="card-text" style="text-align: left;"><%= simple_format(@article.description) %></div> 
