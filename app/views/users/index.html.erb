@@ -1,5 +1,9 @@
 <h1 class="text-success", id="article-h1">Soongram Users</h1>
 
+<div class="flickr_pagination">
+    <%= will_paginate @users, :container => false %>
+  </div>
+
 <div class="container" id:"articles-margin">
     <% @users.each do |user| %>
         <div class="row justify-content-md-center">
@@ -23,3 +27,7 @@
         </div>
     <% end %>
 </div>
+
+<div class="flickr_pagination mb-5">
+    <%= will_paginate @articles, :container => false %>
+  </div>
