@@ -1,0 +1,28 @@
+<h1 class="text-success", id="article-h1">Log in</h1>
+
+<div class="container" id="main-form">
+    <div class="row justify-content-center">
+        <div class="col-10">
+            <%= form_with(scope: :session, url: login_path, class: "shadow p-3 mb-5 bg-light rounded", local: true) do |thing| %>
+                <div class="form-group row">
+                    <%= thing.label :email, class: "col-2 col-form-label" %>
+                    <div class="col-10">
+                        <%= thing.email_field :email, class: "form-control shadow rounded", placeholder: "Type your email" %>
+                    </div>
+                </div>                    
+                <div class="form-group row">
+                    <%= thing.label :password, class: "col-2 col-form-label" %>
+                    <div class="col-10">
+                        <%= thing.password_field :password, class: "form-control shadow rounded", placeholder: "Enter a password" %>
+                    </div>
+                </div>    
+                <div class="container text-center" id="form-button">
+                    <%= thing.submit "Sign up", class: "btn btn-success" %>
+                </div>
+            <% end %>
+        </div>
+        <div class="container text-center">
+            <%= link_to "Cancel and return to Articles", articles_path %>
+        </div>
+    </div>
+</div>

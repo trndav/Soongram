@@ -9,4 +9,7 @@ Rails.application.routes.draw do
   # post "users", to: "users#create"
   # to get all routes, we can call resources :users, without  post: "users" as we know users will have all RESTful routes
   resources :users, except: [:new]
+  get "login", to: "sessions#new"
+  post "login", to: "sessions#create"
+  delete "logout", to: "sessions#destroy"
 end
