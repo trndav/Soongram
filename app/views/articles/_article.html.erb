@@ -13,9 +13,10 @@
                         <div class="card-text" style="text-align: left;"><%= simple_format(truncate(article3.description, length: 130)) %></div> 
 
                         <%= link_to "View", article_path(article3), class: "btn btn-success" %>
-                        <%= link_to "Edit", edit_article_path(article3), class: "btn btn-warning" %>
-                        <%= link_to "Delete", article_path(article3), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger"  %>
-
+                        <% if logged_in? && article3.user == current_user %>
+                            <%= link_to "Edit", edit_article_path(article3), class: "btn btn-warning" %>
+                            <%= link_to "Delete", article_path(article3), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger"  %>
+                        <% end %>
                     </div>      
                     <div class="card-footer text-muted">
                         <small>Created <%= time_ago_in_words(article3.created_at) %> ago, 
