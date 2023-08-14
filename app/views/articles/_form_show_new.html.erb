@@ -18,7 +18,16 @@
                     <div class="col-10">
                         <%= thing.text_area :description, rows: 10, class: "form-control shadow rounded", placeholder: "Start typing description.." %>
                     </div>
-                </div>            
+                </div>      
+
+                <div class="form-group row">
+                    <%= thing.label :category, class: "col-2 col-form-label" %>
+                    <div class="col-10">
+                        <%= thing.collection_select(:category_ids, Category.all, :id, :name, { prompt: "Please Select" },
+                        { multiple: true, size: 3, class: "custom-select shadow rounded" }) %>
+                    </div>
+                </div>          
+
                 <div class="container text-center" id="form-button">
                     <%= thing.submit class: "btn btn-success" %>
                 </div>
