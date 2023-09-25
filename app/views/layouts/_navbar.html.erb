@@ -13,42 +13,43 @@
                 <li class="nav-item">
                     <%= link_to "Articles", articles_path, class: "nav-link" %>
                 </li>
+
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Select
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                        Select
                     </a>
-                    <ul class="dropdown-menu">
+                    <div class="dropdown-menu">
                         <% if logged_in? %>
-                            <li><%= link_to "Create Article", new_article_path, class: "dropdown-item" %></li>
+                            <%= link_to "Create Article", new_article_path, class: "dropdown-item" %>
                         <% end %>
-                        <li><%= link_to "About", about_path, class: "dropdown-item" %></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Awarded</a></li>
-                    </ul>
+                        <%= link_to "About", about_path, class: "dropdown-item" %>
+                        <a class="dropdown-item" href="#">Placeholder</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Awarded</a>
+                    </div>
                 </li>
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Categories
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                        Categories 
                     </a>
                     <ul class="dropdown-menu">
                         <% if logged_in? && current_user.admin? %>
                             <li><%= link_to "Create New Category", new_category_path, class: "dropdown-item" %></li>
                         <% end %>
-                        <li><%= link_to "View Categories", categories_path, class: "dropdown-item" %></li>
+                        <%= link_to "View Categories", categories_path, class: "dropdown-item" %>
                     </ul>
                 </li>
 
-                <% if logged_in? %>
-                    
+                <% if logged_in? %>                    
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <%= "(Admin)" if current_user.admin? %> Profile: <%= current_user.username %>
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                            <%= "(Admin)" if current_user.admin? %> Profile: <%= current_user.username %>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><%= link_to "View profile", user_path(current_user), class: "dropdown-item" %></li>
-                            <li><%= link_to "Edit profile", edit_user_path(current_user), class: "dropdown-item" %></li>
-                            <li><%= link_to "Delete profile", user_path(current_user), class: "dropdown-item text-danger", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></li>
+                            <%= link_to "View profile", user_path(current_user), class: "dropdown-item" %>
+                            <%= link_to "Edit profile", edit_user_path(current_user), class: "dropdown-item" %>
+                            <%= link_to "Delete profile", user_path(current_user), class: "dropdown-item text-danger", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
                         </ul>
                     </li>
                     
